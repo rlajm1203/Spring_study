@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @charset "UTF-8";
 /* styles.css */
 
@@ -261,3 +262,268 @@ footer {
         font-size: 1.5rem;
     }
 }
+=======
+@charset "UTF-8";
+/* styles.css */
+
+
+/* Reset 기본 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a:hover {
+	color: darkgray;
+}
+
+/* 전체 페이지 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    line-height: 1.6;
+}
+
+
+
+/* 헤더 스타일 */
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.functions {
+	position: absolute;
+	top : 10px;
+	right : 10px;
+}
+
+.functions ul {
+	list-style: none;
+    padding: 0;
+}
+
+.functions ul li {
+	display: inline;
+    margin-right: 1rem;
+}
+
+
+
+/* 메인 콘텐츠 스타일 */
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+section ul {
+    list-style: none;
+}
+
+section ul li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ddd;
+}
+
+/* label {
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 5px;
+
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+	display : inline-block;
+    width: 200%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+ 
+}
+
+button[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+} */
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+}
+
+/* contact 페이지 스타일 */
+
+.contact_input {
+	display: block;
+    width: 100px;
+    heigth : 30px;
+    margin-top: 20px; /* 상단과 하단에 10px의 간격을 추가하여 세로로 정렬하고 간격을 띄웁니다. */
+}
+
+.contact_input label {
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 5px;
+
+}
+
+.contact_input input[type="text"],
+.contact_input input[type="email"],
+.contact_input textarea {
+	display : inline-block;
+    width: 200%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+ 
+}
+
+.contact_input button[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
+
+.contact_input button[type="submit"]:hover {
+    background-color: #555;
+}
+
+/* 회원 가입 페이지 스타일 */
+.signup-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.signup-container h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.signup-container {
+    margin-top: 20px;
+}
+
+.signup-container label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.signup-container input[type="text"],
+.signup-container input[type="email"],
+.signup-container input[type="password"] {
+	display:inline-block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.signup-container button[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
+
+.signup-container button[type="submit"]:hover {
+    background-color: #555;
+}
+
+.signup-container p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.signup-container p a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* 푸터 스타일 */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+}
+
+
+/* 반응형 스타일 (선택 사항) */
+@media (max-width: 768px) {
+    main {
+        padding: 0.5rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+}
+>>>>>>> 6ae5e3c224bdb78ebb2714d8314840489fe55f68
