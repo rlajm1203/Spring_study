@@ -1,5 +1,7 @@
 package org.zerock.mapper;
 
+import java.util.Scanner;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,12 +40,41 @@ public class BoardMapperTests {
 	
 	@Test
 	public void testInsertSelectkey() {
+		
 		BoardVO vo = new BoardVO();
-		vo.setTitle("aaaa");
-		vo.setContent("aaaa");
-		vo.setWriter("aaaaa");
+		vo.setTitle("임시 제목");
+		vo.setContent("임시 내용");
+		vo.setWriter("임시 글쓴이");
 		
 		boardMapper.insertSelectKey(vo);
 		log.info("after insert selectkey " + vo.getBno());
 	}
+	
+	@Test
+	public void testRead() {
+		
+		BoardVO vo = boardMapper.read(23L);
+		log.info(vo);
+		
+	}
+	
+	@Test
+	public void testDelete() {
+		
+		int count = boardMapper.delete(1L);
+		log.info("count : " + count);
+	}
+	
+	@Test
+	public void testUpdate() {
+		BoardVO vo = new BoardVO();
+		vo.setBno(25L);
+		vo.setTitle("Updated Title");
+		vo.setContent("Updated content");
+		vo.setWriter("user00");
+		
+		log.info("count : " + boardMapper.update(vo));
+	}
+	
+	
 }
