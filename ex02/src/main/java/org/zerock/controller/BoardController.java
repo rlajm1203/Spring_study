@@ -33,9 +33,8 @@ public class BoardController {
 		model.addAttribute("list", service.getList());
 	}
 	
-	@GetMapping("/get")
+	@GetMapping({"/get", "/modify"})
 	public void get(@RequestParam("bno") Long bno, Model model) {
-		log.info("/get");
 		model.addAttribute("board", service.get(bno));
 	}
 	
@@ -58,6 +57,7 @@ public class BoardController {
 		// Attribute - 파라미터가 URL에 포함된다.
 		return "redirect:/board/list";
 	}
+	
 	
 	@PostMapping("/modify")
 	public String modify(BoardVO board, RedirectAttributes rttr) {
