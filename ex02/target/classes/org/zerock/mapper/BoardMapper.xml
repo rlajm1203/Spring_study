@@ -5,6 +5,7 @@
   
 <mapper namespace="org.zerock.mapper.BoardMapper">
 
+	<!-- select 할 때 resultType 반드시 필수! -->
 	<select id="getList" resultType="org.zerock.domain.BoardVO">
 		select * from tbl_board order by bno desc
 	</select>
@@ -40,4 +41,15 @@
 		where bno = #{bno}
 	</update>
 	
+	<!-- CDATA 섹션 사용 이유 : xml 파일에서는 특수문자(부등호)를 지원하지 않기 때문에 CDATA로 row string 형태를 유지 -->
+	<select id="getListWithPaging" resultType="org.zerock.domain.BoardVO">
+		<![CDATA[
+		select * from 
+		(
+		select /*+ INDEX_DESC(tbl_board pk_board)*/ rownum rn, bno, title, writer, regDate, updateDate
+		from tbl_board
+		where bno>0 and rownum > 0 and rownum <= (#{pageNum}* #{amount})
+		) where rn > (#{pageNum}-1)* #{amount}
+		]]>
+	</select>
 </mapper>

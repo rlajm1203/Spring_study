@@ -16,7 +16,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            수정/삭제
+                            수정
                         </div>
                         <!-- /.panel-heading -->
                         <form>

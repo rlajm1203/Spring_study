@@ -39,9 +39,14 @@ public class BoardControllerTests {
 	
 	@Test
 	public void testList() throws Exception{
+		
+		// MockMvc란 가자로 request를 보내어 테스트할 때 사용하는 클래스로
+		// 톰캣을 실행하여 테스트할 필요 없다.
 		log.info(
 				mockMvc.perform(
-				MockMvcRequestBuilders.get("/board/list"))
+				MockMvcRequestBuilders.get("/board/list")
+				.param("pageNum","1")
+				.param("amount", "50"))
 				.andReturn()
 				.getModelAndView()
 				.getModelMap());

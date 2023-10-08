@@ -1,5 +1,6 @@
 package org.zerock.mapper;
 
+import java.util.List;
 import java.util.Scanner;
 
 import org.junit.Test;
@@ -8,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.zerock.domain.BoardVO;
+import org.zerock.domain.Criteria;
+import org.zerock.domain.pageDTO;
 
 import lombok.extern.log4j.Log4j;
 
@@ -76,5 +79,27 @@ public class BoardMapperTests {
 		log.info("count : " + boardMapper.update(vo));
 	}
 	
+	@Test
+	public void testPaging() {
+		Criteria cri = new Criteria();
+		
+		cri.setPageNum(3);
+		cri.setAmount(10);
+		
+		List<BoardVO> list = boardMapper.getListWithPaging(cri);
+		
+		list.forEach(b -> log.info(b.getBno()));
+	}
 	
+	@Test
+	public void testpageDTO() {
+		
+		Criteria cri = new Criteria();
+		cri.setPageNum(21);
+		
+		pageDTO pageDTO = new pageDTO(cri, 251);
+		
+		log.info(pageDTO);
+		
+	}
 }
